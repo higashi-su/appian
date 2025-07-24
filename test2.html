@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- This script loads the Appian Web components; change it to your Appian server's domain -->
-    <script src="https://toyotaconnected-dev.appianportals.com/suite/tempo/ui/sail-client/embeddedBootstrap.nocache.js" id="appianEmbedded"></script>
+    <title>Embedded Appian</title>
+    <!-- Appianが提供する埋め込みスクリプト -->
+    <script src="https://toyotaconnected-dev.appiancloud.com/suite/embed/embed.js"></script>
   </head>
   <body>
-    <!-- This custom HTML element specifies an Appian report to embed on the HTML page -->
-     This custom page 1111
-    <appian-report reportUrlStub="hboard"></appian-report>
+    <h2>My Embedded Appian Interface</h2>
+    
+    <!-- Appianで公開済みのInterface（a!webComponentInterface）へのリンク -->
+    <appian-web-component
+      src="https://toyotaconnected-dev.appiancloud.com/suite/sites/app"
+      style="width:100%; height:600px;">
+    </appian-web-component>
   </body>
 </html>
+
+
+ 
