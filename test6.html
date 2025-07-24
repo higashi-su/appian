@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メニュー + Webビュー画面</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      font-family: sans-serif;
+    }
+
+    .menu {
+      width: 20%;
+      height: 100%;
+      border-right: 1px solid #ccc;
+      padding: 10px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+    }
+
+    .menu a {
+      display: block;
+      margin-bottom: 10px;
+      color: #333;
+      text-decoration: none;
+    }
+
+    .menu a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      width: 80%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- 左側メニュー（JSでiframeを制御） -->
+  <div class="menu">
+    <a href="#" onclick="loadPage('https://pkutechdemo.appiancloud.com/suite/sites/chattest01')">トップページ</a>
+    <a href="#" onclick="loadPage('https://pkutechdemo.appiancloud.com')">Appian</a>
+    <a href="#" onclick="loadPage('https://pkutechdemo.appiancloud.com/suite/sites/MOvmanage')">Appian22</a>
+    <a href="#" onclick="loadPage('https://pkutechdemo.appiancloud.com/suite/sites/MOvmanage/page/vdashboard')">Appian33</a>
+    <a href="#" onclick="loadPage('https://www.wikipedia.org')">Wikipedia</a>
+  </div>
+
+  <!-- 右側 iframe -->
+  <div class="content">
+    <iframe id="mainFrame" src=""></iframe>
+  </div>
+
+  <script>
+    function loadPage(url) {
+      document.getElementById('mainFrame').src = url;
+    }
+  </script>
+</body>
+</html>
